@@ -1,0 +1,44 @@
+#!/usr/bin/env bash
+
+set -e
+
+source "${0%/*}/../share/php-install/php-install.sh"
+
+if [[ $# -eq 0 ]]; then
+	known_php_distributions
+	exit
+fi
+
+parse_options "$@" || exit $?
+load_php          || exit $?
+
+if [[ $NO_REINSTALL -eq 1 ]] && [[ -x "$INSTALL_DIR/bin/php" ]]; then
+	fail "PHP is already installed into $INSTALL_DIR"
+fi
+
+log "Installing $PHP $PHP_VERSION into $INSTALL_DIR ..."
+
+pre_install || fail "Pre-install tasks failed!"
+
+if [[ ! $NO_INSTALL_DEPS -eq 1 ]]; then
+	install_deps || fail "Installing dependencies failed!"
+fi
+
+if [[ ! $NO_DOWNLOAD -eq 1 ]]; then
+	download_php || fail "Download of $PHP_URL failed!"
+fi
+
+if [[ ! $NO_VERIFY -eq 1 ]]; then
+	verify_php || fail "Verification of of $PHP_ARCHIVE failed!"
+fi
+
+extract_php   || fail "Unpacking of $PHP_ARCHIVE failed!"
+#download_patches || fail "Fetching patches $PATCHES failed!"
+#apply_patches  || fail "Patching $PHP $PHP_VERSION failed!"
+cd "$SRC_DIR/$PHP_SRC_DIR"
+configure_php || fail "Configuration of $PHP $PHP_VERSION failed!"
+compile_php   || fail "Compiling $PHP $PHP_VERSION failed!"
+install_php   || fail "Installation of $PHP $PHP_VERSION failed!"
+post_install   || fail "Post-install tasks failed!"
+
+log "Successfully installed $PHP $PHP_VERSION into $INSTALL_DIR"

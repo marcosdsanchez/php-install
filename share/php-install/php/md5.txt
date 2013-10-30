@@ -1,0 +1,3 @@
+php-5.5.5.tar.bz2:      186c330c272d6322d254db9b2d18482a
+php-5.4.21.tar.bz2:     3dcf021e89b039409d0b1c346b936b5f
+php-5.3.27.tar.bz2:     25ae23a5b9615fe8d33de5b63e1bb788
