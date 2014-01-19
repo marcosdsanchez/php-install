@@ -4,7 +4,7 @@ function setUp()
 {
 	PHP="php"
 	PHP_VERSION="5.3"
-	EXPANDED_PHP_VERSION="5.3.27"
+	EXPANDED_PHP_VERSION="5.3.28"
 }
 
 function test_load_php()

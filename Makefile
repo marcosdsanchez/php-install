@@ -1,5 +1,5 @@
 NAME=php-install
-VERSION=0.0.1
+VERSION=0.0.2
 AUTHOR=marcosdsanchez
 URL=https://github.com/$(AUTHOR)/$(NAME)
 

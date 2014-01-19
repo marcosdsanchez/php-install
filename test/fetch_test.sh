@@ -8,7 +8,7 @@ function setUp()
 function test_fetch()
 {
 	local key="5.3"
-	local expected="5.3.27"
+	local expected="5.3.28"
 	local value=$(fetch "$PHP/versions" "$key")
 
 	assertEquals "did not fetch the correct value" "$expected" "$value"
