@@ -63,9 +63,9 @@ Install a PHP version with specific configuration:
 
 ## Install
 
-    wget -O php-install-0.0.1.tar.gz https://github.com/marcosdsanchez/php-install/archive/v0.0.1.tar.gz
-    tar -xzvf php-install-0.0.1.tar.gz
-    cd php-install-0.0.1/
+    wget -O php-install-0.0.2.tar.gz https://github.com/marcosdsanchez/php-install/archive/v0.0.2.tar.gz
+    tar -xzvf php-install-0.0.2.tar.gz
+    cd php-install-0.0.2/
     sudo make install
 
 ## Credits
