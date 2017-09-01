@@ -1,4 +1,4 @@
-# php-install
+# php-install - [unmaintained]
 
 [![Build Status](https://travis-ci.org/marcosdsanchez/php-install.png?branch=master)](https://travis-ci.org/marcosdsanchez/php-install)
 
